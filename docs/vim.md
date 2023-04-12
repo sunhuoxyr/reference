@@ -58,31 +58,6 @@ G gg H M L k j ▶  print("to")
 `<C-b>` _/_ `<C-f>`            | 向上/向下翻页
 <!--rehype:className=shortcuts-->
 
-#### 字(词)
-
-快捷方式 | 说明
-:- | -
-`b` _/_ `w`  | 上一个/下一个单词
-`ge` _/_ `e` | 上一个/下一个词尾
-<!--rehype:className=shortcuts-->
-
-#### 行
-
-快捷方式 | 说明
-:- | -
-`0` _(zero)_ _/_ `$` | 行的开始/结束
-`^`                  | 行开头 _(非空白)_
-<!--rehype:className=shortcuts-->
-
-#### 字符串
-
-快捷方式 | 说明
-:- | -
-`Fe` _/_ `fe`  | 移动到上一个/下一个`e`
-`To` _/_ `to`  | 在上一个/下一个`o`之前/之后移动
-`\|` _/_ `n\|` | 转到第一个/`n`列
-<!--rehype:className=shortcuts-->
-
 #### 文档
 
 快捷方式 | 说明
@@ -113,47 +88,21 @@ G gg H M L k j ▶  print("to")
 `Esc` \| `<C-[>`       | 退出插入模式
 <!--rehype:className=shortcuts-->
 
-### 保存和退出
-
-快捷方式 | 说明
-:- | -
-`:w`                      | 保存
-`:q`                      | 关闭文件
-`:wq` \| `:x` \| `ZZ`     | 保存并退出
-`:wqa`                    | 保存并退出所有文件
-`:q!` \| `ZQ`             | 强制退出
-`:qa`                     | 关闭所有文件
-`:qa!`                    | 强制退出所有文件
-`:w` new.txt              | 写入`new.txt`
-`:sav` new.txt            | 保存并编辑`new.txt`
-`:w` !sudo tee %          | 写入只读文件
-<!--rehype:className=shortcuts-->
-
 ### 正常模式
 
 快捷方式 | 说明
 :- | -
-`r`                   | 替换一个字符
-`R`                   | 进入替换模式
-`u` _/_ `3u`          | 撤消更改`1`/`3`次
 `U`                   | 在一行上撤消更改
 `J`                   | 加入下一行
-`<C-r>` _/_ 5 `<C-r>` | 重做更改`1`/`5`次
+`<C-r>` | 重做更改
 <!--rehype:className=shortcuts-->
 
 ### 剪切和粘贴
-<!--rehype:wrap-class=row-span-2-->
 
 快捷方式 | 说明
 :- | -
-`x`              | 删除字符 _(剪切)_
 `p` _/_ `P`      | 在之后/之前粘贴
-`xp`             | 交换两个字符
 `D`              | 删除到行尾 _(剪切)_
-`dw`             | 删除单词 _(剪切)_
-`dd`             | 删除线 _(剪切)_
-`ddp`            | 交换两条线
-`yy`             | 拉线 _(复制)_
 `"*p` \| `"+p`   | 从系统剪贴板粘贴
 `"*y` \| `"+y`   | 粘贴到系统剪贴板
 <!--rehype:className=shortcuts-->
@@ -178,111 +127,8 @@ G gg H M L k j ▶  print("to")
 `@:`     | 重复命令行命令
 <!--rehype:className=shortcuts-->
 
-### 可视化模式
-
-快捷方式 | 说明
-:- | -
-`v`         | 进入可视化模式
-`V`         | 进入视线模式
-`<C-v>`     | 进入可视化阻挡模式
-`ggVG`      | 选择所有文本
-`>` _/_ `<` | 向右/向左移动文本
-<!--rehype:className=shortcuts-->
-
-### 宏
-
-:- | -
-:- | -
-`qi`  | 录制宏 `i`
-`q`   | 停止录制宏
-`@i`  | 运行宏`i`
-`7@i` | 运行宏 `i` 7 次
-`@@`  | 重复上一个宏
-<!--rehype:className=shortcuts-->
-
-您可以为任何字母保存宏，而不仅仅是 `i`
-
-Vim 运算符
----------
-
-### 用法
-<!--rehype:style=background:#d7a100;-->
-
-快捷方式 | 说明
-:- | -
-`d`      | <yel>w</yel>
-运算符 | 动作
-<!--rehype:className=shortcuts-->
-
-将 [可用运算符](#可用运算符) 与 [动作](#动作) 结合使用以使用它们
-
-### 可用运算符
-<!--rehype:wrap-class=row-span-2-->
-
-快捷方式 | 说明
-:- | -
-`d`   | 删除
-`y`   | Yank _(复制)_
-`c`   | 更改 _(删除然后插入)_
-`p`   | 粘贴
-`=`   | 格式代码
-`g~`  | 切换案例
-`gU`  | 大写
-`gu`  | 小写
-`>`   | 右缩进
-`<`   | 左缩进
-`!`   | 通过外部程序过滤
-<!--rehype:className=shortcuts-->
-
-### 例子
-<!--rehype:wrap-class=row-span-2-->
-
-组合 | 说明
-:- | -
-`d`<yel>d</yel>      | 删除当前行
-`d`<yel>j</yel>      | 删除两行
-`d`<yel>w</yel>      | 删除到下一个单词
-`d`<yel>b</yel>      | 删除到单词的开头
-`d`<yel>fa</yel>     | 删除直到 `a` 字符
-`d`<yel>/hello</yel> | 删除直到 `hello`
-`c`<yel>c</yel>      | 更改当前行，与 `S` 同义
-`y`<yel>y</yel>      | 复制当前行
-`>`<yel>j</yel>      | 缩进 2 行
-gg`d`<yel>G</yel>    | 删除完整的文档
-gg`=`<yel>G</yel>    | 缩进一个完整的文档
-gg`y`<yel>G</yel>    | 复制整个文档
-<!--rehype:className=show-header-->
-
-### 计数
-
-```shell
-[数字] <运算符> <动作>
-<运算符> [数字] <动作>
-```
-
----
-
-组合 | 说明
-:- | -
-2`d`<yel>d</yel> | 删除 `2` 行
-6`y`<yel>y</yel> | 复制 `6` 行
-`d`3<yel>w</yel> | 删除 `3` 字
-`d`5<yel>j</yel> | 向下删除 `5` 行
-`>`4<yel>k</yel> | 向上缩进 `4` 行
-
 Vim 文本对象
 ------------
-
-### 用法
-<!--rehype:style=background:#d7a100;-->
-
-快捷方式 | 说明
-:- | -
-`v`      | &nbsp; &nbsp; &nbsp; &nbsp; <pur>i</pur> _/_ <pur>a</pur> | <yel>p</yel>
-Operator | <pur>i</pur>nner(内部) _/_ <pur>a</pur>round(周围) | 文本对象
-<!--rehype:className=shortcuts-->
-
-文本块内部或周围使用 [operator](#可用运算符) 进行操作
 
 ### 文本对象
 <!--rehype:wrap-class=row-span-2-->
@@ -301,39 +147,6 @@ Operator | <pur>i</pur>nner(内部) _/_ <pur>a</pur>round(周围) | 文本对象
 <yel>t</yel>                                         | 一个 HTML 标签块
 
 查看 `:help text-objects`
-
-### 删除
-
-快捷方式 | 说明
-:- | -
-`d`<pur>i</pur><yel>w</yel> | 删除内词
-`d`<pur>i</pur><yel>s</yel> | 删除内句
-`d`<pur>i</pur><yel>"</yel> | 引号中删除
-`d`<pur>a</pur><yel>"</yel> | 删除引号 _(包括引号)_
-`d`<pur>i</pur><yel>p</yel> | 删除段落
-
-### 选择
-
-快捷方式 | 说明
-:- | -
-`v`<pur>i</pur><yel>"</yel>                         | 选择内引号“`...`{.underline}”
-`v`<pur>a</pur><yel>"</yel>                         | 选择引号`"..."`{.underline}
-`v`<pur>i</pur><yel>[</yel>                         | 选择内括号 [`...`{.underline}]
-`v`<pur>a</pur><yel>[</yel>                         | 选择括号`[...]`{.underline}
-`v`<pur>i</pur><yel>w</yel>                         | 选择内词
-`v`<pur>i</pur><yel>p</yel>                         | 选择内部段落
-`v`<pur>i</pur><yel>p</yel><pur>i</pur><yel>p</yel> | 选择更多段落
-
-### 杂项
-
-快捷方式 | 说明
-:- | -
-`c`<pur>i</pur><yel>w</yel> | 换内字
-`c`<pur>i</pur><yel>"</yel> | 更改内部引号
-`c`<pur>i</pur><yel>t</yel> | 更改内部标签 (HTML)
-`c`<pur>i</pur><yel>p</yel> | 更改内部段落
-`y`<pur>i</pur><yel>p</yel> | Yank 段落
-`y`<pur>a</pur><yel>p</yel> | Yank 段落 _(包括换行符)_
 
 Vim 多个文件
 -------------
@@ -595,33 +408,12 @@ $ vim -d file1 file2 [file3]
 各种各样的
 -------------
 
-### Case
-<!--rehype:wrap-class=row-span-2-->
-
-快捷方式 | 说明
-:- | -
-`vU`           | _大写_ 字母
-`vu`           | _小写_ 字符
-`~`            | _切换案例_ 字符
-`viw` `U`      | _大写_ 字
-`viw` `u`      | _小写_ 字
-`viw` `~`      | _切换案例_ 字
-`VU` _/_ `gUU` | _大写_ 行
-`Vu` _/_ `guu` | _小写_ 行
-`V~` _/_ `g~~` | _切换案例_ 线
-`gggUG`        | _大写_ 所有文本
-`ggguG`        | _小写_ 所有文本
-`ggg~G`        | _切换大小写_ 所有文本
-<!--rehype:className=shortcuts-->
-
 ### 跳跃
 
 快捷方式 | 说明
 :- | -
 | `<C-o>`  | 返回上一个
 | `<C-i>`  | 向前
-| `gf`     | 转到光标中的文件
-| `ga`     | 显示十六进制、ASCII值
 <!--rehype:className=shortcuts-->
 
 ### 其他命令行
@@ -634,10 +426,6 @@ $ vim -d file1 file2 [file3]
 `:2,8m0`       | 将行 `2`-`8` 移动到 `0`
 `:noh`         | 清除搜索亮点
 `:sort`        | 排序行
-`:ter`         | 打开终端窗口
-`:set paste`   | 启用插入粘贴子模式
-`:set nopaste` | 禁用插入粘贴子模式
-`:cq`          | 退出并出现错误<br/> _(正在中止 Git)_
 
 ### 导航
 
@@ -648,14 +436,6 @@ $ vim -d file1 file2 [file3]
 `])` _\|_ `]{`           | 下一个`)`或`}`
 `[m`                     | 上一个方法开始
 `[M`                     | 上一个方法结束
-<!--rehype:className=shortcuts-->
-
-### 计数器
-
-快捷方式 | 说明
-:- | -
-`<C-a>`  | 增加数量
-`<C-x>`  | 减少数量
 <!--rehype:className=shortcuts-->
 
 ### 选项卡
@@ -671,16 +451,6 @@ $ vim -d file1 file2 [file3]
 `:tselect Classname` | 查找类名的定义
 `:tjump Classname`   | 查找类名的定义 _(自动选择第一个)_
 <!--rehype:className=shortcuts-->
-
-### 格式化
-
-:- | -
-:- | -
-| `:ce 8` | `8` 列之间的中心线 |
-| `:ri 4` | 在 `4` 列右对齐行 |
-| `:le`   | 左对齐线 |
-
-查看 `:help formatting`
 
 ### 标记
 <!--rehype:wrap-class=row-span-4 col-span-2-->
@@ -805,53 +575,3 @@ f  # 表示到...位置上 forward
 ```shell
 动词 介词/数词 名词
 ```
-
-下面是几个例子：
-
-```shell
-c3w  # 修改三个单词：change three words
-d2w  # 删除两个单词：delete two words
-```
-
-另外，数词也可以修饰动词，表示将操作执行 `n` 次。于是，我们又有了下面的语法：
-
-```shell
-数词 动词 名词
-```
-
-示例
-
-```shell
-2dw # 两次删除单词(等价于删除两个单词): twice delete word
-3x  # 三次删除字符(等价于删除三个字符): three times delete character
-```
-
-### 组词为句理解
-
-有了这些基本的语言元素，我们就可以着手构造一些简单的命令了。文本编辑命令的基本语法如下：
-
-```shell
-动词 介词 名词
-```
-
-下面是一些例子
-
-```shell
-dip # 删除一个段落: delete inside paragraph
-vis # 选取一个句子: visual select inside sentence
-ciw # 修改一个单词: change inside word
-caw # 修改一个单词: change around word
-dtx # 删除文本直到字符“x”(不包括字符“x”): delete to x
-dfx # 删除文本直到字符“x”(包括字符“x”): delete forward x
-```
-<!--rehype:className=wrap-text -->
-
-另见
----
-
-- [搞得像IDE一样的 Vim](https://jaywcjlove.github.io/vim-web) _(github.io)_
-- [Vim 官方网站](http://www.vim.org/) _(vim.org)_
-- [Devhints](https://devhints.io/vim) _(devhints.io)_
-- [Vim cheatsheet](https://vim.rtorr.com/lang/zh_cn/) _(vim.rotrr.com)_
-- [Vim documentation](http://vimdoc.sourceforge.net/htmldoc/) _(vimdoc.sourceforge.net)_
-- [Interactive Vim tutorial](http://openvim.com/) _(openvim.com)_

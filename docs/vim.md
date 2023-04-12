@@ -56,13 +56,6 @@ G gg H M L k j ▶  print("to")
 `<C-b>` _/_ `<C-f>`            | 向上/向下翻页
 <!--rehype:className=shortcuts-->
 
-#### 字符串
-
-快捷方式 | 说明
-:- | -
-`\|` _/_ `n\|` | 转到第一个/`n`列
-<!--rehype:className=shortcuts-->
-
 #### 文档
 
 快捷方式 | 说明
@@ -79,25 +72,21 @@ G gg H M L k j ▶  print("to")
 `zt` _/_ `zz` _/_  `zb` | 上/中/下这条线
 <!--rehype:className=shortcuts-->
 
-### 保存和退出
+### 正常模式
 
 快捷方式 | 说明
 :- | -
-`:wq` \| `:x` \| `ZZ`     | 保存并退出
-`:q!` \| `ZQ`             | 强制退出
-`:w` new.txt              | 写入`new.txt`
-`:sav` new.txt            | 保存并编辑`new.txt`
-`:w` !sudo tee %          | 写入只读文件
+`U`                   | 在一行上撤消更改
+`J`                   | 加入下一行
+`<C-r>` | 重做更改
 <!--rehype:className=shortcuts-->
 
 ### 剪切和粘贴
-<!--rehype:wrap-class=row-span-2-->
 
 快捷方式 | 说明
 :- | -
-`x`              | 删除字符 _(剪切)_
 `p` _/_ `P`      | 在之后/之前粘贴
-`xp`             | 交换两个字符
+`D`              | 删除到行尾 _(剪切)_
 `"*p` \| `"+p`   | 从系统剪贴板粘贴
 `"*y` \| `"+y`   | 粘贴到系统剪贴板
 <!--rehype:className=shortcuts-->
@@ -113,58 +102,8 @@ G gg H M L k j ▶  print("to")
 `@:`     | 重复命令行命令
 <!--rehype:className=shortcuts-->
 
-### 可视化模式
-
-快捷方式 | 说明
-:- | -
-`<C-v>`     | 进入可视化阻挡模式
-`ggVG`      | 选择所有文本
-`>` _/_ `<` | 向右/向左移动文本
-<!--rehype:className=shortcuts-->
-
-### 宏
-
-:- | -
-:- | -
-`@@`  | 重复上一个宏
-<!--rehype:className=shortcuts-->
-
-Vim 运算符
----------
-
-### 可用运算符
-<!--rehype:wrap-class=row-span-2-->
-
-快捷方式 | 说明
-:- | -
-`g~`  | 切换案例
-`Gu`  | 大写
-`gu`  | 小写
-<!--rehype:className=shortcuts-->
-
-### 例子
-<!--rehype:wrap-class=row-span-2-->
-
-组合 | 说明
-:- | -
-`d`<yel>/hello</yel> | 删除直到 `hello`
-`>`<yel>j</yel>      | 缩进 2 行
-gg`y`<yel>G</yel>    | 复制整个文档
-<!--rehype:className=show-header-->
-
 Vim 文本对象
 ------------
-
-### 用法
-<!--rehype:style=background:#d7a100;-->
-
-快捷方式 | 说明
-:- | -
-`v`      | &nbsp; &nbsp; &nbsp; &nbsp; <pur>i</pur> _/_ <pur>a</pur> | <yel>p</yel>
-Operator | <pur>i</pur>nner(内部) _/_ <pur>a</pur>round(周围) | 文本对象
-<!--rehype:className=shortcuts-->
-
-文本块内部或周围使用 [operator](#可用运算符) 进行操作
 
 ### 文本对象
 <!--rehype:wrap-class=row-span-2-->
@@ -183,39 +122,6 @@ Operator | <pur>i</pur>nner(内部) _/_ <pur>a</pur>round(周围) | 文本对象
 <yel>t</yel>                                         | 一个 HTML 标签块
 
 查看 `:help text-objects`
-
-### 删除
-
-快捷方式 | 说明
-:- | -
-`d`<pur>i</pur><yel>w</yel> | 删除内词
-`d`<pur>i</pur><yel>s</yel> | 删除内句
-`d`<pur>i</pur><yel>"</yel> | 引号中删除
-`d`<pur>a</pur><yel>"</yel> | 删除引号 _(包括引号)_
-`d`<pur>i</pur><yel>p</yel> | 删除段落
-
-### 选择
-
-快捷方式 | 说明
-:- | -
-`v`<pur>i</pur><yel>"</yel>                         | 选择内引号“`...`{.underline}”
-`v`<pur>a</pur><yel>"</yel>                         | 选择引号`"..."`{.underline}
-`v`<pur>i</pur><yel>[</yel>                         | 选择内括号 [`...`{.underline}]
-`v`<pur>a</pur><yel>[</yel>                         | 选择括号`[...]`{.underline}
-`v`<pur>i</pur><yel>w</yel>                         | 选择内词
-`v`<pur>i</pur><yel>p</yel>                         | 选择内部段落
-`v`<pur>i</pur><yel>p</yel><pur>i</pur><yel>p</yel> | 选择更多段落
-
-### 杂项
-
-快捷方式 | 说明
-:- | -
-`c`<pur>i</pur><yel>w</yel> | 换内字
-`c`<pur>i</pur><yel>"</yel> | 更改内部引号
-`c`<pur>i</pur><yel>t</yel> | 更改内部标签 (HTML)
-`c`<pur>i</pur><yel>p</yel> | 更改内部段落
-`y`<pur>i</pur><yel>p</yel> | Yank 段落
-`y`<pur>a</pur><yel>p</yel> | Yank 段落 _(包括换行符)_
 
 Vim 多个文件
 -------------
@@ -251,8 +157,8 @@ Vim 多个文件
 `<C-w>` `<`  _/_ `>` | 减少/增加宽度
 `<C-w>` `\|`          | 最大宽度
 `<C-w>` `=`          | 同样高和宽
-`<C-h>` _/_ `<C-l>`  | 转到左/右窗口
-`<C-j>` _/_ `<C-k>`  | 转到上/下窗口
+`<C-w>` `h` _/_ `l`  | 转到左/右窗口
+`<C-w>` `j` _/_ `k`  | 转到上/下窗口
 <!--rehype:className=shortcuts-->
 
 ### 选项卡
@@ -420,6 +326,36 @@ Vim 搜索和替换
 Vimdiff
 -------
 
+### 用法
+<!--rehype:style=background:#d7a100;-->
+
+```shell script
+$ vimdiff file1 file2 [file3]
+$ vim -d file1 file2 [file3]
+```
+
+### 编辑
+<!--rehype:wrap-class=row-span-2-->
+
+```
+:[range]diffget [bufspec]
+:[range]diffput [bufspec]
+```
+
+---
+
+快捷方式 | 说明
+:- | -
+`do` _/_ `:diffget` | 获取（get）差异
+`dp` _/_ `:diffput` | 放差价
+`:dif`              | 重新扫描差异
+`:diffo`            | 关闭差异模式
+`:1,$+1diffget`     | 获取所有差异
+`ZQ`                | 不做改动就退出
+<!--rehype:className=shortcuts-->
+
+请参阅：[范围](#范围)
+
 ### 折叠
 <!--rehype:wrap-class=row-span-2-->
 
@@ -436,8 +372,60 @@ Vimdiff
 `zx`          | 更新折叠
 <!--rehype:className=shortcuts-->
 
-marks
------------
+### 跳跃
+
+快捷方式 | 说明
+:- | -
+`]c`     | 下一个区别
+`[c`     | 以前的区别
+<!--rehype:className=shortcuts-->
+
+各种各样的
+-------------
+
+### 跳跃
+
+快捷方式 | 说明
+:- | -
+| `<C-o>`  | 返回上一个
+| `<C-i>`  | 向前
+<!--rehype:className=shortcuts-->
+
+### 其他命令行
+<!--rehype:wrap-class=row-span-2-->
+
+:- | -
+:- | -
+`:h`           | 帮助打开帮助视图
+`:edit!`       | 重新加载当前文件
+`:2,8m0`       | 将行 `2`-`8` 移动到 `0`
+`:noh`         | 清除搜索亮点
+`:sort`        | 排序行
+
+### 导航
+
+快捷方式 | 说明
+:- | -
+`%`                      | 最近/匹配的`{[()]}`
+`[(` _\|_ `[{`           | 上一个 `(` 或 `{`
+`])` _\|_ `]{`           | 下一个`)`或`}`
+`[m`                     | 上一个方法开始
+`[M`                     | 上一个方法结束
+<!--rehype:className=shortcuts-->
+
+### 选项卡
+<!--rehype:wrap-class=row-span-2 col-span-2-->
+
+快捷方式 | 说明
+:- | -
+`:tag Classname`     | 跳转到 Classname 的第一个定义
+`<C-]>`              | 跳转到定义
+`g]`                 | 查看所有定义
+`<C-t>`              | 回到最后一个标签
+`<C-o> <C-i>`        | 后退前进
+`:tselect Classname` | 查找类名的定义
+`:tjump Classname`   | 查找类名的定义 _(自动选择第一个)_
+<!--rehype:className=shortcuts-->
 
 ### 标记
 <!--rehype:wrap-class=row-span-4 col-span-2-->
@@ -463,118 +451,9 @@ marks
 <code>y\`a</code>  | 将文本从当前位置拉到 `a` 的位置
 `:marks`           | 列出所有当前标记
 `:delm a`          | 删除标记`a`
+`:delm a-d`        | 删除标记`a`、`b`、`c`、`d`
+`:delm abc`        | 删除标记`a`、`b`、`c`
 <!--rehype:className=shortcuts-->
-
-寄存器
-----------
-
-### 寄存器
-<!--rehype:wrap-class=row-span-4 col-span-2-->
-
-快捷方式 | 说明
-:- | -
-<code>"0</code> | 最后复制的文本
-`"1-9` | 最近删除的文本
-`".` | 最后插入的文本
-`"%` | 当前文件的路径
-`":` | 最近一次执行的命令
-`"#` |
-`"=` | 处理表达式的结果
-`"/` | 搜索的内容
-`"*` _/_ `"+` | 访问系统剪贴板
-`"a` ~ `"z` | 覆盖原有的内容
-`"A` ~ `"Z` | 将文本追加到原有的内容上
-<!--rehype:className=shortcuts-->
-
-各种各样的
--------------
-
-### Case
-<!--rehype:wrap-class=row-span-2-->
-
-快捷方式 | 说明
-:- | -
-`vU`           | _大写_ 字母
-`vu`           | _小写_ 字符
-`~`            | _切换案例_ 字符
-`viw` `U`      | _大写_ 字
-`viw` `u`      | _小写_ 字
-`viw` `~`      | _切换案例_ 字
-`VU` _/_ `gUU` | _大写_ 行
-`Vu` _/_ `guu` | _小写_ 行
-`V~` _/_ `g~~` | _切换案例_ 线
-`gggUG`        | _大写_ 所有文本
-`ggguG`        | _小写_ 所有文本
-`ggg~G`        | _切换大小写_ 所有文本
-<!--rehype:className=shortcuts-->
-
-### 跳跃
-
-快捷方式 | 说明
-:- | -
-| `<C-o>`  | 返回上一个
-| `<C-i>`  | 向前
-| `gf`     | 转到光标中的文件
-| `ga`     | 显示十六进制、ASCII值
-<!--rehype:className=shortcuts-->
-
-### 其他命令行
-<!--rehype:wrap-class=row-span-2-->
-
-:- | -
-:- | -
-`:h`           | 帮助打开帮助视图
-`:edit!`       | 重新加载当前文件
-`:2,8m0`       | 将行 `2`-`8` 移动到 `0`
-`:noh`         | 清除搜索亮点
-`:sort`        | 排序行
-`:ter`         | 打开终端窗口
-`:set paste`   | 启用插入粘贴子模式
-`:set nopaste` | 禁用插入粘贴子模式
-`:cq`          | 退出并出现错误<br/> _(正在中止 Git)_
-
-### 导航
-
-快捷方式 | 说明
-:- | -
-`%`                      | 最近/匹配的`{[()]}`
-`[(` _\|_ `[{`           | 上一个 `(` 或 `{`
-`])` _\|_ `]{`           | 下一个`)`或`}`
-`[m`                     | 上一个方法开始
-`[M`                     | 上一个方法结束
-<!--rehype:className=shortcuts-->
-
-### 计数器
-
-快捷方式 | 说明
-:- | -
-`<C-a>`  | 增加数量
-`<C-x>`  | 减少数量
-<!--rehype:className=shortcuts-->
-
-### 选项卡
-<!--rehype:wrap-class=row-span-2 col-span-2-->
-
-快捷方式 | 说明
-:- | -
-`:tag Classname`     | 跳转到 Classname 的第一个定义
-`<C-]>`              | 跳转到定义
-`g]`                 | 查看所有定义
-`<C-t>`              | 回到最后一个标签
-`<C-o> <C-i>`        | 后退前进
-`:tselect Classname` | 查找类名的定义
-`:tjump Classname`   | 查找类名的定义 _(自动选择第一个)_
-<!--rehype:className=shortcuts-->
-
-### 格式化
-
-:- | -
-:- | -
-| `:ce 8` | `8` 列之间的中心线 |
-| `:ri 4` | 在 `4` 列右对齐行 |
-| `:le`   | 左对齐线 |
-
-查看 `:help formatting`
 
 ### 计算器
 
@@ -662,3 +541,12 @@ f  # 表示到...位置上 forward
 ```
 
 介词界定了待编辑文本的范围或者位置。
+
+### 数词理解
+<!--rehype:wrap-class=col-span-2-->
+
+数词指定了待编辑文本对象的数量，从这个角度而言，数词也可以看作是一种介词。引入数词之后，文本编辑命令的语法就升级成了下面这样：
+
+```shell
+动词 介词/数词 名词
+```

@@ -85,15 +85,14 @@ G gg H M L k j ▶  print("to")
 ╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈▷  print("SCREEN 2")
 ```
 
+
 入门
 ---------------
 
 ### 动作
-<!--rehype:wrap-class=row-span-2-->
 
 快捷方式 | 说明
 :- | -
-`h` \| `j` \| `k` \| `l`       | 方向键
 `<C-u>` _/_ `<C-d>`            | 上/下半页
 `<C-b>` _/_ `<C-f>`            | 向上/向下翻页
 <!--rehype:className=shortcuts-->
@@ -102,7 +101,6 @@ G gg H M L k j ▶  print("to")
 
 快捷方式 | 说明
 :- | -
-`gg` _/_ `G`   | 第一行/最后一行
 `:n` \| `nG`   | 转到第 `n` 行
 `}` _/_ `{`    | 下一个/上一个空行
 <!--rehype:className=shortcuts-->
@@ -113,19 +111,6 @@ G gg H M L k j ▶  print("to")
 :- | -
 `H` _/_ `M` _/_ `L`     | 上/中/下屏幕
 `zt` _/_ `zz` _/_  `zb` | 上/中/下这条线
-<!--rehype:className=shortcuts-->
-
-### 插入模式
-
-快捷方式 | 说明
-:- | -
-`i` _/_ `a`            | 在光标之前/之后插入
-`I` _/_ `A`            | 插入行的开始/结束
-`o` _/_ `O` _(letter)_ | 在下方/上方插入新行
-`s` _/_ `S`            | 删除字符/行并插入
-`C` _/_ `cc`           | 更改到/当前行的结尾
-`gi`                   | 在最后一个插入点插入
-`Esc` \| `<C-[>`       | 退出插入模式
 <!--rehype:className=shortcuts-->
 
 ### 正常模式
@@ -145,15 +130,6 @@ G gg H M L k j ▶  print("to")
 `D`              | 删除到行尾 _(剪切)_
 `"*p` \| `"+p`   | 从系统剪贴板粘贴
 `"*y` \| `"+y`   | 粘贴到系统剪贴板
-<!--rehype:className=shortcuts-->
-
-#### 在可视化模式下
-
-快捷方式 | 说明
-:- | -
-| `d` _\|_ `x` | 删除选择 _(剪切)_
-| `s`          | 替换选择
-| `y`          | Yank 选择 _(复制)_
 <!--rehype:className=shortcuts-->
 
 ### 重复
@@ -179,11 +155,11 @@ Vim 多个文件
 `:bn`      | 转到下一个缓冲区
 `:bp`      | 转到上一个缓冲区
 `:bd [ number ]`      | 从缓冲区列表中删除文件
-`:b { number }`     | 打开指定缓冲区
+`:b { number }`     | 打开指定缓冲区 
 `:b file`  | 按文件转到缓冲区
 `:hid`     | 隐藏此缓冲区
+`:wn`      | 写入文件并移至下一个
 `:tab ba`  | 将所有缓冲区编辑为选项卡
-`<C-^>` | 在最近的两个缓冲区跳转
 
 #### buffer 转 window
 
@@ -191,6 +167,7 @@ Vim 多个文件
 :- | -
 `:sp [ file ]` | 水平拆分窗口，并打开指定文件
 `:vs [ file ]` | 垂直拆分窗口，并打开指定文件
+
 
 ### window
 <!--rehype:wrap-class=col-span-2-->
@@ -212,7 +189,7 @@ Vim 多个文件
 #### window 转 tab
 
 :- | - |
-:- | - |
+:- | - | 
  `<C-w>` `T`          | 拆分成一个新标签
 
 ### tabs

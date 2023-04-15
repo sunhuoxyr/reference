@@ -93,7 +93,6 @@ G gg H M L k j ▶  print("to")
 
 快捷方式 | 说明
 :- | -
-`h` \| `j` \| `k` \| `l`       | 方向键
 `<C-u>` _/_ `<C-d>`            | 上/下半页
 `<C-b>` _/_ `<C-f>`            | 向上/向下翻页
 <!--rehype:className=shortcuts-->
@@ -102,7 +101,6 @@ G gg H M L k j ▶  print("to")
 
 快捷方式 | 说明
 :- | -
-`gg` _/_ `G`   | 第一行/最后一行
 `:n` \| `nG`   | 转到第 `n` 行
 `}` _/_ `{`    | 下一个/上一个空行
 <!--rehype:className=shortcuts-->
@@ -113,19 +111,6 @@ G gg H M L k j ▶  print("to")
 :- | -
 `H` _/_ `M` _/_ `L`     | 上/中/下屏幕
 `zt` _/_ `zz` _/_  `zb` | 上/中/下这条线
-<!--rehype:className=shortcuts-->
-
-### 插入模式
-
-快捷方式 | 说明
-:- | -
-`i` _/_ `a`            | 在光标之前/之后插入
-`I` _/_ `A`            | 插入行的开始/结束
-`o` _/_ `O` _(letter)_ | 在下方/上方插入新行
-`s` _/_ `S`            | 删除字符/行并插入
-`C` _/_ `cc`           | 更改到/当前行的结尾
-`gi`                   | 在最后一个插入点插入
-`Esc` \| `<C-[>`       | 退出插入模式
 <!--rehype:className=shortcuts-->
 
 ### 正常模式
@@ -147,15 +132,6 @@ G gg H M L k j ▶  print("to")
 `"*y` \| `"+y`   | 粘贴到系统剪贴板
 <!--rehype:className=shortcuts-->
 
-#### 在可视化模式下
-
-快捷方式 | 说明
-:- | -
-| `d` _\|_ `x` | 删除选择 _(剪切)_
-| `s`          | 替换选择
-| `y`          | Yank 选择 _(复制)_
-<!--rehype:className=shortcuts-->
-
 ### 重复
 
 快捷方式 | 说明
@@ -174,15 +150,13 @@ Vim 多个文件
 
 :- | -
 :- | -
-`:e file`  | 在新缓冲区中编辑文件
 `:ls`      | 列出所有打开的缓冲区
 `:bn`      | 转到下一个缓冲区
 `:bp`      | 转到上一个缓冲区
 `:bd [ number ]`      | 从缓冲区列表中删除文件
 `:b { number }`     | 打开指定缓冲区
-`:b file`  | 按文件转到缓冲区
 `:hid`     | 隐藏此缓冲区
-`:tab ba`  | 将所有缓冲区编辑为选项卡
+`:tab ba`  | 将所有缓冲区编辑为tab
 `<C-^>` | 在最近的两个缓冲区跳转
 
 #### buffer 转 window
@@ -197,17 +171,28 @@ Vim 多个文件
 
 :- | - | -
 :- | - | -
- `<C-w>` `s`         | `<leader>sh` | 拆分窗口
- `<C-w>` `v`         | `<leader>sv` | 垂直拆分窗口
- `<C-w>` `w`          | 切换窗口
+ `<C-w>` `s`         | `<leader>sh` | <yel>split</yel> 拆分窗口
+ `<C-w>` `v`         | `<leader>sv` | <yel>vsplit</yel> 垂直拆分窗口
+ `<C-w>` `n`         | | <yel>new</yel> 创建新窗口
+ `<C-w>` `]`         | |  拆分新窗口，并转到光标下的标签
  `<C-w>` `q`         | `<leader>sx` | 退出一个窗口
- `<C-w>` `x`          | 用下一个交换当前
- `<C-w>` `-`  _/_ `+` | 减少/增加高度
- `<C-w>` `<`  _/_ `>` | 减少/增加宽度
- `<C-w>` `\|`        | `<leader>sm`  | 最大/小宽度
- `<C-w>` `=`         | `<leader>se`  | 同样高和宽
- `<C-w>` `h` _/_ `l` | `<C-h>` _/_ `<C-l>` | 转到左/右窗口
- `<C-w>` `j` _/_ `k` | `<C-j>` _/_ `<C-k>` | 转到上/下窗口
+ `<C-w>` `o`         | `<leader>so` | <yel>only</yel> 只保留当前窗口
+ `<C-w>` `c`         | `<leader>sc` | <yel>close</yel>  隐藏当前缓冲区并关闭
+
+#### window 切换
+
+:- | - | - | -
+:- | - | - | -
+ `<C-w>` `w`         | | wrap | 切换窗口
+ `<C-w>` `h` _/_ `l` | `<C-h>` _/_ `<C-l>` | | 转到左/右窗口
+ `<C-w>` `j` _/_ `k` | `<C-j>` _/_ `<C-k>` | | 转到上/下窗口
+
+#### 调整窗口
+
+:- | - | - | -
+:- | - | - | -
+ | | `<leader>sm`  |  | 最大/小宽度
+ `<C-w>` `=`         | `<leader>se` |  | 同样高和宽
 
 #### window 转 tab
 
@@ -220,16 +205,19 @@ Vim 多个文件
 
 :- | - | - | -
 :- | - | - | -
-`:tabe [file]` |      | `<leader>to` | <yel>E</yel>在新选项卡中编辑文件
-`:tabf [file]` |      |              | 如果在新选项卡中存在则打开
-`:tabc`        |      | `<leader>tx` | 关闭当前选项卡
-`:tabo`        |      |              | 关闭<yel>o</yel>其他选项卡
-`:tabs`        |      |              | 列出所有<yel>标签</yel>
-`:tabr`        |      |              | 转到第一个<yel>r</yel>标签
-`:tabl`        |      |              | 转到 <yel>l</yel>ast 选项卡
-`:tabm 0`      |      |              | <yel>我</yel>转到位置 `0`
-`:tabn`        | `gt` | `<leader>tn` | 转到 <yel>n</yel>ext 选项卡
-`:tabp`        | `gT` | `<leader>tp` | 转到<yel>p</yel>上一个标签
+`:tabs`        |      |              | 列出所有标签
+`:tabe [file]` |      | `<leader>to` | <yel>edit</yel>  在新tab中编辑文件
+`:tabc`        |      | `<leader>tx` | <yel>close</yel>  关闭当前tab
+`:tabo`        |      |              | <yel>only</yel> 关闭其他tab
+
+#### tab 切换
+
+:- | - | - | -
+:- | - | - | -
+`:tabr`        |      |              | <yel>rewind</yel>转到第一个 tab
+`:tabl`        |      |              | <yel>last</yel> 转到最后tab
+`:tabn`        | `gt` | `<leader>tn` | <yel>next</yel>  转到下一个tab
+`:tabp`        | `gT` | `<leader>tp` | <yel>preivew</yel> 转到上一个tab
 
 Vim 搜索和替换
 ------------------
@@ -263,22 +251,7 @@ Vim 搜索和替换
 `:s/old/new/gc`   | 全部替换_(确认)_
 `:s/old/new/i`    | 先忽略大小写替换
 `:2,6s/old/new/g` | 在 `2`-`6` 行之间替换
-
-### 替换文件
-
-```vim
-:%s/{pattern}/{str}/[flags]
-```
-
----
-
-:- | -
-:- | -
-`:%s/old/new`     | 先更换
-`:%s/old/new/g`   | 全部替换
-`:%s/old/new/gc`  | 全部替换 _(确认)_
-`:%s/old/new/gi`  | 全部替换 _(忽略大小写)_
-`:%s/\vold/new/g` | 全部替换为 [regex](./regex.md)
+`:%s/old/new`     | 全文替换
 
 ### 范围
 <!--rehype:wrap-class=row-span-2-->
